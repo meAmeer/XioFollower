@@ -24,14 +24,50 @@
             background-size: cover;
             color: #d1d5db;
         }
-        .btn {
+        nav {
+            backdrop-filter: blur(10px);
+            background-color: rgba(31, 41, 55, 0.7);
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.9);
+            min-width: 160px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            opacity: 0.9;
             transition: all 0.3s ease;
-            box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-item {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s ease;
+            border-radius: 10px;
+        }
+        .dropdown-item:hover {
+            background-color: rgba(251, 191, 36, 0.3);
+            transform: translateX(2px);
+        }
+        .btn {
+            background: linear-gradient(90deg, #fbbf24, #f1f5f9);
+            border-radius: 50px;
+            padding: 10px 20px;
+            color: #1f2937;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
         .btn:hover {
-            opacity: 0.9;
-            filter: drop-shadow(0 0 15px #ffffff);
-            transform: scale(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
         .icon {
             width: 50px;
@@ -87,7 +123,7 @@
             font-family: 'Anton', sans-serif;
             font-size: 4rem;
             font-weight: bold;
-            color: #4d6f38;
+            color: #f8e2b7;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
         .sub-header-text {
@@ -115,6 +151,9 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             transition: background-color 0.3s;
+            background-image: url('C:/Users/ameer/Desktop/site/chat.png');
+            background-size: cover;
+            background-position: center;
         }
         .chat-btn:hover {
             background-color: #2563eb;
@@ -207,16 +246,35 @@
             font-size: 1.5rem;
             margin-top: 10px;
         }
+        .testimonial-bg {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            padding: 40px 0;
+        }
+        .about-bg {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 40px 0;
+        }
     </style>
 </head>
 <body>
-    <nav class="bg-gray-900 p-5 shadow-xl">
+    <nav class="p-5 shadow-xl">
         <div class="container mx-auto flex justify-between items-center">
             <img src="./icon.png" alt="XIO Icon" class="icon mr-2">
             <h1 class="header-text" tabindex="0">Xio Follow Boosters</h1>
             <ul class="flex space-x-5">
                 <li><a href="#packages" class="text-gray-300 hover:text-white" tabindex="0">Packages</a></li>
                 <li><a href="#testimonials" class="text-gray-300 hover:text-white" tabindex="0">Testimonials</a></li>
+                <li class="dropdown">
+                    <a href="#" class="text-gray-300 hover:text-white" tabindex="0">Other Services</a>
+                    <div class="dropdown-content">
+                        <a href="likes.html" class="dropdown-item">Likes</a>
+                        <a href="story.html" class="dropdown-item">Story Views</a>
+                        <a href="reels.html" class="dropdown-item">Reels Views</a>
+                    </div>
+                </li>
                 <li><a href="#about" class="text-gray-300 hover:text-white" tabindex="0">About Us</a></li>
             </ul>
         </div>
@@ -232,49 +290,59 @@
                 <div class="package-box p-5 rounded-lg shadow-lg" tabindex="0">
                     <h3 class="font-semibold text-lg text-white">100 Followers</h3>
                     <p class="text-gray-400">$10</p>
-                    <button class="btn btn-primary w-full mt-5" onclick="redirectToAccount('10', '100 Followers')">Purchase</button>
+                    <button class="btn w-full mt-5" onclick="redirectToAccount('10', '100 Followers')">Purchase</button>
                 </div>
                 <div class="package-box p-5 rounded-lg shadow-lg" tabindex="0">
                     <h3 class="font-semibold text-lg text-white">500 Followers</h3>
                     <p class="text-gray-400">$40</p>
-                    <button class="btn btn-primary w-full mt-5" onclick="redirectToAccount('40', '500 Followers')">Purchase</button>
+                    <button class="btn w-full mt-5" onclick="redirectToAccount('40', '500 Followers')">Purchase</button>
                 </div>
                 <div class="package-box p-5 rounded-lg shadow-lg" tabindex="0">
                     <h3 class="font-semibold text-lg text-white">1000 Followers</h3>
                     <p class="text-gray-400">$70</p>
-                    <button class="btn btn-primary w-full mt-5" onclick="redirectToAccount('70', '1000 Followers')">Purchase</button>
+                    <button class="btn w-full mt-5" onclick="redirectToAccount('70', '1000 Followers')">Purchase</button>
                 </div>
                 <div class="package-box p-5 rounded-lg shadow-lg" tabindex="0">
                     <h3 class="font-semibold text-lg text-white">250 Followers</h3>
                     <p class="text-gray-400">$25</p>
-                    <button class="btn btn-primary w-full mt-5" onclick="redirectToAccount('25', '250 Followers')">Purchase</button>
+                    <button class="btn w-full mt-5" onclick="redirectToAccount('25', '250 Followers')">Purchase</button>
                 </div>
                 <div class="highlight-package p-5 rounded-lg shadow-lg transition duration-300 relative" tabindex="0">
                     <span class="popular-badge">Best Seller</span>
                     <h3 class="font-semibold text-lg text-white">750 Followers</h3>
                     <p class="text-gray-400">$55</p>
-                    <button class="btn btn-primary w-full mt-5" onclick="redirectToAccount('55', '750 Followers')">Purchase</button>
+                    <button class="btn w-full mt-5" onclick="redirectToAccount('55', '750 Followers')">Purchase</button>
                 </div>
                 <div class="package-box p-5 rounded-lg shadow-lg" tabindex="0">
                     <h3 class="font-semibold text-lg text-white">1500 Followers</h3>
                     <p class="text-gray-400">$90</p>
-                    <button class="btn btn-primary w-full mt-5" onclick="redirectToAccount('90', '1500 Followers')">Purchase</button>
+                    <button class="btn w-full mt-5" onclick="redirectToAccount('90', '1500 Followers')">Purchase</button>
                 </div>
                 <div class="package-box p-5 rounded-lg shadow-lg" tabindex="0">
                     <h3 class="font-semibold text-lg text-white">3000 Followers</h3>
                     <p class="text-gray-400">$150</p>
-                    <button class="btn btn-primary w-full mt-5" onclick="redirectToAccount('150', '3000 Followers')">Purchase</button>
+                    <button class="btn w-full mt-5" onclick="redirectToAccount('150', '3000 Followers')">Purchase</button>
+                </div>
+                <div class="package-box p-5 rounded-lg shadow-lg" tabindex="0">
+                    <h3 class="font-semibold text-lg text-white">5000 Followers</h3>
+                    <p class="text-gray-400">$200</p>
+                    <button class="btn w-full mt-5" onclick="redirectToAccount('200', '5000 Followers')">Purchase</button>
+                </div>
+                <div class="package-box p-5 rounded-lg shadow-lg" tabindex="0">
+                    <h3 class="font-semibold text-lg text-white">10000 Followers</h3>
+                    <p class="text-gray-400">$350</p>
+                    <button class="btn w-full mt-5" onclick="redirectToAccount('350', '10000 Followers')">Purchase</button>
                 </div>
             </div>
             <div class="slider-container">
                 <p class="slider-value" id="sliderValue">Followers: 10</p>
                 <input type="range" min="10" max="50000" value="10" class="slider" id="followersRange" oninput="updateSliderValue()">
                 <p class="price-display" id="priceDisplay">Price: $1.00</p>
-                <button class="btn btn-primary w-full mt-5" id="purchaseCustom" onclick="redirectToAccount(calculatePrice(), 'Custom Followers')">Purchase</button>
+                <button class="btn w-full mt-5" id="purchaseCustom" onclick="redirectToAccount(calculatePrice(), 'Custom Followers')">Purchase</button>
             </div>
         </div>
     </section>
-    <section id="testimonials" class="py-20 bg-gray-900">
+    <section id="testimonials" class="testimonial-bg">
         <div class="container mx-auto text-center">
             <h2 class="text-2xl font-bold mb-5 text-white" tabindex="0">Customer Testimonials</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -316,7 +384,7 @@
             </div>
         </div>
     </section>
-    <section id="about" class="py-20 bg-gray-900">
+    <section id="about" class="about-bg">
         <div class="container mx-auto text-center">
             <h2 class="text-2xl font-bold mb-5 text-white" tabindex="0">About Us</h2>
             <p class="text-gray-300 mb-5" tabindex="0">We are dedicated to helping you grow your Instagram presence with ease and efficiency.</p>
@@ -328,9 +396,7 @@
     <footer class="bg-gradient-to-b from-[#4b5563] to-[#374151] p-5 shadow-xl text-center">
         <p class="text-gray-400">&copy; 2023 Xio Follow Boosters - All Rights Reserved</p>
     </footer>
-    <div class="chat-btn" onclick="toggleChat()" role="button" tabindex="0" aria-label="Chat with us">
-        <span class="material-icons">chat</span>
-    </div>
+    <div class="chat-btn" onclick="toggleChat()" role="button" tabindex="0" aria-label="Chat with us"></div>
     <div class="chat-window" id="chatWindow" aria-hidden="true">
         <div class="chat-header">Live Chat Support</div>
         <div class="chat-body" id="chatBody"></div>
